@@ -1,35 +1,40 @@
 <template>
-  <div id="app">
-    <div id="nav">
-      <img src="../media/img/logoCarilo.png" alt="logo" />
-    </div>
+    <v-row>
+      <v-col cols="12">
+        <ul>
+          <li v-for="(guest,index) in guests" :key="index">{{guests}}</li>
+        </ul>
+        <guestForm v-model="form"
+                  ref="form"></guestForm>
+      </v-col>
+    </v-row> 
+    <!-- 
     <div id="section">
       <div class="cuadrado1"></div>
       <div class="cuadrado2"></div>
       <div class="cuadrado3"></div>
       <div class="cuadrado4"></div>
       <div class="cuadrado5"></div>
-    </div>
-  </div>
+    </div> -->
 </template>
 
 <script>
-export default {
-  name: "mainComponent",
-  props: {
-    msg: String
-  },
-  data(){
-    return{
+  import GuestForm from './GuestForm';
+
+   export default {
+    name: "GuestNew",
+    components: {
+        GuestForm
+    },
+    data(){
+      return {
+        guests: ["uno","dos","tres"]
+      }
     }
   }
-};
 </script>
 
 <style scoped>
-  #nav {
-    padding: 10px;
-  }
   .cuadrado1 {
      width: 100px; 
      height: 100px; 
