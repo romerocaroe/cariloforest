@@ -1,6 +1,19 @@
 <template>
-  <router-view />
+  <div id="app">
+        <guestMain></guestMain>
+  </div>
 </template>
+
+<script>
+import GuestMain from './components/Form/GuestMain';
+
+export default {
+  name: "App",
+  components: {
+    GuestMain
+  }
+}
+</script>
 
 <style>
 #app {
